@@ -200,7 +200,7 @@ h3 {
 .cssload-preloader-box > div:nth-child(9) { background: rgb(221,0,255); margin-right: 8px; animation: cssload-movement 690ms ease 690ms infinite alternate; }
 .cssload-preloader-box > div:nth-child(10) { background: rgb(51,102,255); margin-right: 8px; animation: cssload-movement 690ms ease 776.25ms infinite alternate; }
 @keyframes cssload-movement {
-    from { transform: scale(1.0) translateY(0px) rotateX(0deg); box-shadow: 0 0 0 rgba(0,0,0,0); }
+    from { transform: scale(1.0) LotranslateY(0px) rotateX(0deg); box-shadow: 0 0 0 rgba(0,0,0,0); }
     to { transform: scale(1.5) translateY(-14px) rotateX(45deg); box-shadow: 0 14px 22px rgba(0,0,0,0.4); background: rgb(51,153,255); }
 }
 audio { display: none; }
@@ -300,15 +300,29 @@ audio { display: none; }
             </div>
             <p id="response-message" style="font-size: 20px; margin-top: 20px; font-weight: bold;"></p>
         </div>
-        <p style="text-align: center;"><span style="background-color: #ff0000; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;"> Saal Mein 1 Baar Aati Hai <strong>EID</strong> </span></p>
-        <p style="text-align: center;"><span style="background-color: #008000; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;"> Khushiyan Hazar Lati Hai <strong>EID </strong></span></p>
-        <p style="text-align: center;"><span style="background-color: #ff00ff; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;"> Momin Ke Liye Tohfa Hai <strong>EID</strong> </span></p>
-        <p style="text-align: center;"><span style="background-color: #00ccff; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;"> Bachchoo Ke Liye Eidi Hai <strong>EID</strong> </span></p>
-        <p style="text-align: center;"><span style="background-color: #ff6600; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;"> Allah Ki Ata Or Inam Hai <strong>EID</strong> </span></p>
-        <p style="text-align: center;"><span style="background-color: #00ff00; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;"> Harek Ko Mubark Ho Ye Pyari Si <strong>EID</strong> </span></p>
-        <p style="text-align: center;"><strong><span style="font-size: 18pt; font-family: tahoma, arial, helvetica, sans-serif;"><span style="color: #ff0000;">》⍟☆⍣ Bakra Eid 2025 ⍣☆⍟《</span></span></strong></p>
-        <img src="https://wallpapercave.com/wp/wp8793452.jpg" class="img-responsive" alt="Main Image" style="width: 300px">
-        <img src="https://bit.ly/35E0jsM" height="100px" width="110px"/>
+        <p style="text-align: center;"><span style="background-color: #ff0000; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;Saal Mein 1 Baar Aati Hai <strong>EID</strong>&nbsp;</span></p>
+<p style="text-align: center;"><span style="background-color: #008000; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;Khushiyan Hazar Lati Hai <strong>EID&nbsp;</strong></span></p>
+<p style="text-align: center;"><span style="background-color: #ff00ff; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;Momin Ke Liye Tohfa Hai <strong>EID</strong>&nbsp;</span></p>
+<p style="text-align: center;"><span style="background-color: #00ccff; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;Bachchoo Ke Liye Eidi Hai <strong>EID</strong>&nbsp;</span></p>
+<p style="text-align: center;"><span style="background-color: #ff6600; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;Allah Ki Ata Or Inam Hai <strong>EID</strong>&nbsp;</span></p>
+<p style="text-align: center;"><span style="background-color: #00ff00; color: #ffffff; font-size: 14pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;Harek Ko Mubark Ho Ye Pyari Si <strong>EID</strong>&nbsp;</span></p>
+      <p style="text-align: center;">
+  <strong>
+    <span style="font-size: 18pt; font-family: tahoma, arial, helvetica, sans-serif;">
+      <span style="color: #ff0000;">》⍟☆⍣ Bakra Eid 2025 ⍣☆⍟《</span>
+    </span>
+  </strong>
+</p>
+
+<!-- Main Eid image -->
+<div style="text-align: center;">
+  <img src="https://wallpapercave.com/wp/wp8793452.jpg" class="img-responsive" alt="Main Image" style="width: 300px">
+</div>
+
+<!-- Red moon icon (NEEDED below image) -->
+<div style="text-align: center; margin-top: 10px;">
+  <img src="https://bit.ly/35E0jsM" height="100px" width="110px"/>
+</div>
         <div class="busi"><p style="text-transform: uppercase;font-size: 20px;color:#000000;">By-<script>document.write(a);</script><br><img src="https://bit.ly/3wKgWyC" height="105px" width="105px"/></p></div>
         <img src="https://bit.ly/35KpR7f" height="70px" width="110px"/>
         <br>
@@ -335,13 +349,12 @@ function getParameterByName(name) {
     return url.searchParams.get(name);
 }
 const nameFromUrl = getParameterByName('n');
-if (nameFromUrl) {
+if (nameFromUrl && nameFromUrl.trim() !== "") {
     a = decodeURIComponent(nameFromUrl);
-    document.getElementById('greeting').textContent = a;
 } else {
     a = prompt("Please Enter Your Name\n\n👇👇👇👇👇") || "Guest";
-    document.getElementById('greeting').textContent = a;
 }
+document.getElementById('greeting').textContent = a;
 function shareGreeting() {
     console.log("WhatsApp button clicked!");
     const name = document.getElementById("userName").value.trim() || a;
