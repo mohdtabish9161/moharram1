@@ -520,11 +520,14 @@ var x = setInterval(function() {
 <script>
 // Modified Popup and Greeting Logic
 var a = "";
+
 function getParameterByName(name) {
     const url = new URL(window.location.href);
     return url.searchParams.get(name);
 }
+
 const nameFromUrl = getParameterByName('n');
+
 if (nameFromUrl) {
     a = decodeURIComponent(nameFromUrl);
     document.getElementById('greeting').textContent = a;
@@ -536,15 +539,19 @@ if (nameFromUrl) {
         document.getElementById('greeting').textContent = "Guest";
     }
 }
+
 function shareGreeting() {
     const name = document.getElementById("userName").value.trim() || a;
     if (!name) {
         alert("Apna naam likho pehle!");
         return;
     }
-    a = name; // Update global 'a' for consistency
-    const message = `*${name}* ने आपके लिए कुछ खास भेजा है! 👇👇👇\https://bit.ly/43K71e7/?n=${encodeURIComponent(name)}`;
-    window.location.href = `whatsapp://send?text=${encodeURIComponent(message)}`;
+    a = name; // Update global 'a'
+    
+    const message = `*${name}* ne aapke liye kuch khaas bheja hai! 👇👇👇\nhttps://bit.ly/43K71e7/?n=${encodeURIComponent(name)}`;
+    
+    const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, "_blank");
 }
 // Music Toggle Function
 <body>
